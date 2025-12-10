@@ -1,0 +1,90 @@
+%============================== Impostazioni del documento =============================================
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage[none]{hyphenat}
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage{hyperref}
+\usepackage{ocgx2}
+\usepackage{amssymb} % \square, \boxtimes, \blacksquare
+
+
+
+%============================== Inizio documento =============================================
+\begin{document}
+	
+	\section{Example of two mutually exclusive checkboxes}
+	
+	\begin{tabularx}{\textwidth}{XXX}
+		{
+			\begin{center}
+				\textbf{\Large Question:}
+			\end{center}
+			
+			\begin{itemize}
+				\item \large Are you Italian? 
+			\end{itemize}
+		}&{
+			
+			\begin{center}
+				\hspace*{5mm}
+				\textbf{\Large Yes}
+			\end{center}
+			
+			% First checkbox
+			\begin{center}
+				\leavevmode
+				% Empty check
+				\hbox{%
+					\makebox[0pt][l]{%
+						\begin{ocg}{Empty_check}{E}{1}%
+							\Huge\actionsocg{ }{C, E1}{E, C1}{$\square$}%
+						\end{ocg}%
+					}%
+				}%
+				% Crossed check
+				\hbox{%
+					\makebox[0pt][l]{%
+						\begin{ocg}{Crossed_check}{C}{0}%
+							\Huge\actionsocg{ }{E}{C}{$\boxtimes$}%
+						\end{ocg}%
+					}%
+				}%
+			\end{center}
+			
+		}&{
+		
+			\begin{center}
+				\hspace*{5mm}
+				\textbf{\Large No}
+			\end{center}
+			
+			% Second checkbox
+			
+			\begin{center}
+				\leavevmode
+				% Empty check
+				\hbox{%
+					\makebox[0pt][l]{%
+						\begin{ocg}{Empty_check}{E1}{1}%
+							\Huge\actionsocg{}{C1, E}{E1, C}{$\square$}%
+						\end{ocg}%
+					}%
+				}%
+				% Crossed check
+				\hbox{%
+					\makebox[0pt][l]{%
+						\begin{ocg}{Crossed_check}{C1}{0}%
+							\Huge\actionsocg{}{E1}{C1}{$\boxtimes$}%
+						\end{ocg}%
+					}%
+				}%
+			\end{center}
+		
+		}
+	\end{tabularx}
+	
+\end{document}
